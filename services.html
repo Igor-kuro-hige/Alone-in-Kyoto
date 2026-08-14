@@ -24,8 +24,22 @@
       </nav>
     </header>
     <main>
-      <h2>Bring something from Japan</h2>
+      <h2>Services</h2>
       <form>
+        <fieldset>
+          <legend>What do you need?</legend>
+
+          <label>
+            <input type="radio" name="service-type" value="item" checked />
+            Bring an item from Japan
+          </label>
+
+          <label>
+            <input type="radio" name="service-type" value="guide" />
+            Guide service
+          </label>
+        </fieldset>
+
         <label for="name">Your name</label>
         <input type="text" id="name" name="name" class="form-field" required />
 
@@ -46,6 +60,13 @@
           rows="4"
           required
         ></textarea>
+
+        <label for="duration">Tour duration (if guide)</label>
+        <select id="duration" name="duration" class="form-field">
+          <option value="">Choose duration</option>
+          <option value="half-day">Half day (3-4 hours)</option>
+          <option value="full-day">Full day (6-8 hours)</option>
+        </select>
 
         <label for="budget">Budget (optional)</label>
         <input type="number" id="budget" name="budget" class="form-field" />
