@@ -41,6 +41,22 @@ nav a:hover {
   color: #888;
 }
 
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 6px;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover .nav-icon {
+  transform: translateY(-3px);
+}
+
+.nav-link:hover .icon-plane {
+  transform: rotate(15deg);
+}
+
 main {
   max-width: 800px;
   margin: 0 auto;
