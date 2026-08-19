@@ -57,6 +57,35 @@ nav a:hover {
   transform: rotate(15deg);
 }
 
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1a1a1a;
+  min-width: 200px;
+  border-radius: 6px;
+  padding: 8px 0;
+  z-index: 200;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #333;
+}
+
 main {
   max-width: 800px;
   margin: 0 auto;
@@ -146,6 +175,142 @@ legend {
 }
 
 #place-to-be-alone article p {
+  padding-bottom: 20px;
+}
+
+#style-page h2 {
+  margin-bottom: 20px;
+}
+
+#style-page main {
+  grid-template-columns: 1fr;
+}
+
+#style-page article {
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  gap: 0;
+}
+
+#style-page article img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+  display: block;
+}
+
+#style-page article h3,
+#style-page article p {
+  padding: 0 20px;
+}
+
+#style-page article h3 {
+  margin-top: 15px;
+}
+
+#style-page article p {
+  padding-bottom: 20px;
+}
+
+#travel-page h2 {
+  margin-bottom: 20px;
+}
+
+#travel-page main {
+  grid-template-columns: 1fr;
+}
+
+#travel-page article {
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  gap: 0;
+}
+
+#travel-page article img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+  display: block;
+}
+
+#travel-page article h3,
+#travel-page article p {
+  padding: 0 20px;
+}
+
+#travel-page article h3 {
+  margin-top: 15px;
+}
+
+#travel-page article p {
+  padding-bottom: 20px;
+}
+
+#music-page h2 {
+  margin-bottom: 20px;
+}
+
+#music-page main {
+  grid-template-columns: 1fr;
+}
+
+#music-page article {
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  gap: 0;
+}
+
+#music-page article img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+  display: block;
+}
+
+#music-page article h3,
+#music-page article p {
+  padding: 0 20px;
+}
+
+#music-page article h3 {
+  margin-top: 15px;
+}
+
+#music-page article p {
+  padding-bottom: 20px;
+}
+
+#thoughts-page h2 {
+  margin-bottom: 20px;
+}
+
+#thoughts-page main {
+  grid-template-columns: 1fr;
+}
+
+#thoughts-page article {
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  gap: 0;
+}
+
+#thoughts-page article img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+  display: block;
+}
+
+#thoughts-page article h3,
+#thoughts-page article p {
+  padding: 0 20px;
+}
+
+#thoughts-page article h3 {
+  margin-top: 15px;
+}
+
+#thoughts-page article p {
   padding-bottom: 20px;
 }
 
