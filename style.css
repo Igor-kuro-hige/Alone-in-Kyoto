@@ -90,9 +90,6 @@ main {
   max-width: 800px;
   margin: 0 auto;
   padding: 40px 20px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
 }
 
 main h2 {
@@ -142,6 +139,12 @@ fieldset {
 legend {
   font-weight: 600;
   padding: 0 8px;
+}
+
+#articles-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
 }
 
 #place-to-be-alone h2 {

@@ -44,3 +44,22 @@ let html = articles
   .join("");
 
 document.querySelector("#articles-container").innerHTML = html;
+
+document.addEventListener("DOMContentLoaded", function () {
+  let musicBtn = document.querySelector("#music-toggle");
+  let music = document.querySelector("#bg-music");
+  let volumeSlider = document.querySelector("#volume-slider");
+
+  musicBtn.addEventListener("click", function () {
+    if (music.paused) {
+      music.play();
+      musicBtn.textContent = "⏸ Pause";
+    } else {
+      music.pause();
+      musicBtn.textContent = "🎵 Play";
+    }
+  });
+  volumeSlider.addEventListener("input", function () {
+    music.volume = volumeSlider.value;
+  });
+});
