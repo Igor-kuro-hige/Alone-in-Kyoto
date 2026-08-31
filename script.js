@@ -14,42 +14,10 @@ function greetVisitor() {
 }
 
 greetVisitor();
-let articles = [
-  {
-    title: "Places to be alone with yourself",
-    text: "Sometimes we want to be alone, not because we are lonely, but because we need time to reflect on our thoughts and feelings.",
-  },
-  {
-    title: "Style",
-    text: "Fashion is permanent, but style is eternal. It is a way to express our personality",
-  },
-  {
-    title: "Music",
-    text: "Within endless sea of music we choose something that resonates with our soul.",
-  },
-  {
-    title: "Travel",
-    text: "Traveling is a way to discover new places, cultures, and experiences. It allows us to step out of our comfort zone and broaden our perspective on the world.",
-  },
-  {
-    title: "Thoughts",
-    text: "Just my thoughts, nothing more. I write them down to remember and reflect on them later.",
-  },
-];
-
-let html = articles
-  .map((article) => {
-    return `<article><h3>${article.title}</h3><p>${article.text}</p></article>`;
-  })
-  .join("");
-
-document.querySelector("#articles-container").innerHTML = html;
-
 document.addEventListener("DOMContentLoaded", function () {
   let musicBtn = document.querySelector("#music-toggle");
   let music = document.querySelector("#bg-music");
   let volumeSlider = document.querySelector("#volume-slider");
-
   musicBtn.addEventListener("click", function () {
     if (music.paused) {
       music.play();
@@ -62,4 +30,58 @@ document.addEventListener("DOMContentLoaded", function () {
   volumeSlider.addEventListener("input", function () {
     music.volume = volumeSlider.value;
   });
+
+  let articles = [
+    {
+      title: "Places to be alone with yourself",
+      text: "Sometimes we want to be alone, not because we are lonely, but because we need time to reflect on our thoughts and feelings.",
+    },
+    {
+      title: "Style",
+      text: "Fashion is permanent, but style is eternal. It is a way to express our personality",
+    },
+    {
+      title: "Music",
+      text: "Within endless sea of music we choose something that resonates with our soul.",
+    },
+    {
+      title: "Travel",
+      text: "Traveling is a way to discover new places, cultures, and experiences. It allows us to step out of our comfort zone and broaden our perspective on the world.",
+    },
+    {
+      title: "Thoughts",
+      text: "Just my thoughts, nothing more. I write them down to remember and reflect on them later.",
+    },
+  ];
+
+  let html = articles
+    .map((article) => {
+      return `<article><h3>${article.title}</h3><p>${article.text}</p></article>`;
+    })
+    .join("");
+
+  let articlesContainer = document.querySelector("#articles-container");
+  if (articlesContainer) {
+    articlesContainer.innerHTML = html;
+  }
+
+  let form = document.querySelector("form");
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      console.log("Form is being submitted");
+    });
+  }
+
+  let itemRadio = document.querySelector('input[value="item"]');
+  let guideRadio = document.querySelector('input[value="guide"]');
+  let durationSelect = document.querySelector("#duration");
+  if (itemRadio && guideRadio && durationSelect) {
+    guideRadio.addEventListener("click", function () {
+      durationSelect.required = true;
+    });
+    itemRadio.addEventListener("click", function () {
+      durationSelect.required = false;
+    });
+  }
 });
