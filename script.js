@@ -31,40 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
     music.volume = volumeSlider.value;
   });
 
-  let articles = [
-    {
-      title: "Places to be alone with yourself",
-      text: "Sometimes we want to be alone, not because we are lonely, but because we need time to reflect on our thoughts and feelings.",
-    },
-    {
-      title: "Style",
-      text: "Fashion is permanent, but style is eternal. It is a way to express our personality",
-    },
-    {
-      title: "Music",
-      text: "Within endless sea of music we choose something that resonates with our soul.",
-    },
-    {
-      title: "Travel",
-      text: "Traveling is a way to discover new places, cultures, and experiences. It allows us to step out of our comfort zone and broaden our perspective on the world.",
-    },
-    {
-      title: "Thoughts",
-      text: "Just my thoughts, nothing more. I write them down to remember and reflect on them later.",
-    },
-  ];
-
-  let html = articles
-    .map((article) => {
-      return `<article><h3>${article.title}</h3><p>${article.text}</p></article>`;
-    })
-    .join("");
-
-  let articlesContainer = document.querySelector("#articles-container");
-  if (articlesContainer) {
-    articlesContainer.innerHTML = html;
-  }
-
   let form = document.querySelector("form");
   if (form) {
     form.addEventListener("submit", function (event) {
@@ -201,6 +167,21 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "2026-08-03",
     },
   ];
+
+  let sortedArticles = allArticles.sort(
+    (a, b) => new Date(b.date) - new Date(a.date),
+  );
+  let latestArticles = sortedArticles.slice(0, 3);
+  let html = latestArticles
+    .map((article) => {
+      return `<article><h3>${article.title}</h3><p>${article.text}</p></article>`;
+    })
+    .join("");
+
+  let articlesContainer = document.querySelector("#latest-container");
+  if (articlesContainer) {
+    articlesContainer.innerHTML = html;
+  }
 
   let pageSlug = document.body.id.replace("-page", "");
   console.log(pageSlug);
