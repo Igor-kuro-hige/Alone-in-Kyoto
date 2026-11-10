@@ -14,7 +14,13 @@ function greetVisitor() {
 }
 
 greetVisitor();
-document.addEventListener("DOMContentLoaded", function () {
+async function initPage() {
+  let headerResponse = await fetch("header.html");
+  let headerHtml = await headerResponse.text();
+  document.querySelector("#header-placeholder").innerHTML = headerHtml;
+  let response = await fetch("footer.html");
+  let footerHtml = await response.text();
+  document.querySelector("#footer-placeholder").innerHTML = footerHtml;
   let musicBtn = document.querySelector("#music-toggle");
   let music = document.querySelector("#bg-music");
   let volumeSlider = document.querySelector("#volume-slider");
@@ -212,4 +218,5 @@ document.addEventListener("DOMContentLoaded", function () {
       durationSelect.required = false;
     });
   }
-});
+}
+initPage();
